@@ -1,4 +1,4 @@
-@Library('your-shared-library')_
+@Library('Ali-shared-library')_
 
 pipeline {
     agent { label 'slave' }  // Run on a Jenkins slave
