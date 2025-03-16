@@ -13,7 +13,7 @@ pipeline {
         DOCKER_CREDENTIALS_ID = "docker-hub-credentials"
         KUBE_CONFIG_PATH = "~/.kube/config"
         KUBE_NAMESPACE = "default"
-        KUBE_DEPLOYMENT_FILE = "${APP_DIR}/k8s/deployment.yaml"
+        KUBE_DEPLOYMENT_FILE = "${APP_DIR}/deployment.yaml"
     }
 
     stages {
