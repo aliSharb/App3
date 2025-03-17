@@ -1,7 +1,7 @@
 @Library('Ali-shared-library')_
 
 pipeline {
-    agent { label 'slave' }  // Run on a Jenkins slave
+    agent any
 
     environment {
         REPO_URL = "https://github.com/aliSharb/App3.git"
