@@ -16,10 +16,10 @@ spec:
     spec:
       containers:
         - name: my-app-container
-          image: alisharb/my-app:${BUILD_TAG}  # Jenkins replaces ${BUILD_TAG} dynamically
+          image: alisharb/my-app:${BUILD_TAG}  # Dynamic image tag from Jenkins
           imagePullPolicy: Always
           ports:
-            - containerPort: 80
+            - containerPort: 8080  # Changed from 80 to 8080
           resources:
             requests:
               memory: "128Mi"
@@ -30,6 +30,7 @@ spec:
           env:
             - name: ENVIRONMENT
               value: "production"
+
 ---
 apiVersion: v1
 kind: Service
@@ -40,6 +41,6 @@ spec:
     app: my-app
   ports:
     - protocol: TCP
-      port: 80
-      targetPort: 80
-  type: LoadBalancer  # Change to ClusterIP if needed
+      port: 30000  # Exposed NodePort (range: 30000-32767)
+      targetPort: 8080  # Matches containerPort
+  type: NodePort  # Use ClusterIP for internal services
