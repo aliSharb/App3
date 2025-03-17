@@ -1,4 +1,4 @@
-@Library('Ali-shared-library')_
+@Library('Ali-shared-library')
 
 pipeline {
     agent any
