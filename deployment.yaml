@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: my-app-container
-          image: alisharb/my-app:${BUILD_TAG}  # Dynamic image tag from Jenkins
+          image: alisharb/my-app:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 8080  # Changed from 80 to 8080
